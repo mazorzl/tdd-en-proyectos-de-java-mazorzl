@@ -23,10 +23,11 @@ jobs:
                   java-version: '17'
                   distribution: 'temurin'
 
-            - name: Generar Javadoc
+            - name: Generar carpeta para docs
               run:
                 mkdir -p docs
-                javadoc -d docs $(find . -name "*.java")
+            - name: Ejecutar comando JavaDoc
+              run: javadoc -d docs $(find . -name "*.java")
 
             - name: Publicar en GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
