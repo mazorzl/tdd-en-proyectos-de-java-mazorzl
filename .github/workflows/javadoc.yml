@@ -24,8 +24,6 @@ jobs:
                   distribution: 'temurin'
 
             - name: Generar Javadoc
-                # ¡OJO A ESTA LÍNEA! Debes ajustar la ruta de tus archivos .java
-                # Este comando busca todos los .java dentro de la carpeta src/ y los compila en la carpeta 'docs'
               run: javadoc -d docs src/**/*.java
 
             - name: Publicar en GitHub Pages
