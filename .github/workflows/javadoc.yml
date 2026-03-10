@@ -24,7 +24,9 @@ jobs:
                   distribution: 'temurin'
 
             - name: Generar Javadoc
-              run: javadoc -d docs src/**/*.java
+              run:
+                mkdir -p docs
+                javadoc -d docs $(find . -name "*.java")
 
             - name: Publicar en GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
